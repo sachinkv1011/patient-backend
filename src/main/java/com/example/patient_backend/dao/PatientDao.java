@@ -12,8 +12,8 @@ import java.util.List;
 public interface PatientDao extends CrudRepository<PatientModel,Integer> {
    @Modifying
    @Transactional
-    @Query(value="DELETE FROM `patient_details` WHERE `name`= :name",nativeQuery = true)
-    void deletePatient(@Param("name") String name);
+    @Query(value="DELETE FROM `patient_details` WHERE `id`= :id",nativeQuery = true)
+    void deletePatient(@Param("id") Integer id);
 
 
    @Query(value = "SELECT `id`, `date`, `doctor_name`, `name`, `phoneno` FROM `patient_details` WHERE `name`= :name",nativeQuery = true)

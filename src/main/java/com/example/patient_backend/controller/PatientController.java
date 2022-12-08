@@ -33,7 +33,7 @@ public class PatientController {
     public HashMap<String,String> DeletePatient(@RequestBody PatientModel p) {
         String id=String.valueOf(p.getId());
         System.out.println(id);
-        dao.deletePatient(p.getName());
+        dao.deletePatient(p.getId());
         HashMap<String,String> map = new HashMap<>();
         map.put("status","success");
         return map;
